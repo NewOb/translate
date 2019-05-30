@@ -1,0 +1,15 @@
+.article_li{
+    list-style: none;
+    border-bottom: 2px solid gainsboro;
+    padding: 5px 0px;
+}
+#li_all{
+    width: 800px;
+    margin: 0 auto;
+}
+#content{
+    color: darkgray;
+}
+.article{
+    font-weight: 800;
+}

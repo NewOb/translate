@@ -1,0 +1,42 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+<div style="width: 850px;margin: 0 auto">
+<table class="table">
+    <thead>
+    <tr>
+        <th>译员账号</th>
+        <th>获取金额</th>
+        <th>正确率</th>
+        <th>支付宝账号</th>
+        <td></td>
+    </tr>
+    </thead>
+    {% for person in persons %}
+    <tr>
+    <td>{{ person.emil }}</td>
+    <td>
+        <form action="{{ url_for('clear') }}" method="post">
+            <input  name="clear" type="hidden" value="{{ person.id }}">
+            <button type="submit" class="btn btn-link">{{ person.money }}</button></form></td>
+    <td>{{ person.right }}</td>
+    <td>{{ person.pay }}</td>
+    <td>
+        <form action="{{ url_for('delet') }}" method="post">
+            <input name="id" type="hidden" value="{{ person.id }}">
+            <button type="submit" class="btn btn-primary">删除</button>
+        </form></td>
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+{% endblock %}

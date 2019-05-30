@@ -1,0 +1,29 @@
+{% extends 'translator_base.html' %}
+
+{% block title %}
+译员中心
+{% endblock %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block main %}
+<div style="margin: 0 auto;width: 850px">
+<h3>{{ massage.translatorname }}</h3>
+<p>账号：{{ massage.emil }}</p>
+<p>已获取金额：{{ massage.money }}</p>
+<p>翻译正确率：{{ massage.right }}</p>
+    <form action="{{ url_for('center_get') }}" method="post">
+        <div class="form-group">
+            {% if massage.pay %}
+            <input style="width: 250px" type="text" name="pay" class="form-control" id="exampleInputEmail1" value="{{ massage.pay }}" placeholder="请输入支付宝账号">
+            {% else %}
+                <input style="width: 250px" type="text" name="pay" class="form-control" id="exampleInputEmail1"  placeholder="请输入支付宝账号">
+            {% endif %}
+            <input name="id" type="hidden" value="{{ massage.id }}">
+  </div>
+        <button type="submit" class="btn btn-primary">确定</button>
+    </form>
+</div>
+{% endblock %}

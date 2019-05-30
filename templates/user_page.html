@@ -1,0 +1,19 @@
+{% extends 'user_base.html' %}
+
+{% block title %}
+用户
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename = 'css/article.css') }}">
+{% endblock %}
+
+{% block main %}
+<ul id="li_all">
+{% for article in articles %}
+<li class="article_li">
+    <a href="{{ url_for('user_detil',article_title = article.title) }}" class="article"><h5 id="title">{{ article.title }}</h5></a>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

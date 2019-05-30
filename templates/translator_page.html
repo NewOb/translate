@@ -1,0 +1,21 @@
+{% extends 'translator_base.html' %}
+
+{% block title %}
+译员
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/article.css') }}">
+{% endblock %}
+
+{% block main %}
+<ul id="li_all">
+{% for article in articles %}
+<li class="article_li">
+    <a href="{{ url_for('translator_detil',article_id = article.id) }}" class="article"><p id="title">{{ article.title }}-{{ article.paragraph_name }}</p></a>
+    <p style="color: red;float: right">￥{{ article.price }}</p>
+    <p id="content">{{ article.content }}</p>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

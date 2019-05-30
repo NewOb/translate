@@ -1,0 +1,32 @@
+{% extends 'user_base.html' %}
+
+{% block title %}
+{{ title.title }}
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/detil.css') }}">
+{% endblock %}
+
+{% block main %}
+<div id="ditil_all">
+<div id="title">
+    <h3>{{ title.title }}</h3>
+</div>
+    <hr>
+    <h4>原文</h4>
+<div id="content">
+    {% for article in articles %}
+    <p>{{ article.content }}</p>
+    {% endfor %}
+</div>
+    <hr>
+<h4>译文</h4>
+<div id="content">
+    {% for article in articles %}
+    <p>{{ article.re_translated }}</p>
+    {% endfor %}
+</div>
+
+</div>
+{% endblock %}

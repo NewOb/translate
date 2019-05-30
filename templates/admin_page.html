@@ -1,0 +1,20 @@
+{% extends 'admin_base.html' %}
+
+{% block title %}
+管理员
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/article.css') }}">
+{% endblock %}
+
+{% block main %}
+<ul id="li_all">
+{% for article in articles %}
+<li class="article_li">
+    <a href="{{ url_for('admin_detil',article_id = article.id) }}" class="article"><p id="title">{{ article.title }}</p></a>
+    <p id="content">{{ article.content }}</p>
+</li>
+{% endfor %}
+</ul>
+{% endblock %}

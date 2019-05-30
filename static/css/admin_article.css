@@ -1,0 +1,10 @@
+#all{
+    width: 600px;
+    margin: 0 auto;
+}
+h3{
+    text-align: center;
+}
+button{
+    float: right;
+}

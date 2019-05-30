@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>众译平台 -首页</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/index.css') }}"/>
+</head>
+<body>
+<div id="all">
+    <div>
+        <h1>种草翻译网</h1>
+    </div>
+    <div>
+        <div class="boot_but">
+            <a href="{{ url_for("translator_login") }}" class="btn btn-primary btn-lg btn-block" role="button">我是译员</a>
+            <a href="{{ url_for("user_login") }}" class="btn btn-default btn-lg btn-block" role="button">我是用户</a>
+        </div>
+    </div>
+</div>
+</body>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>
